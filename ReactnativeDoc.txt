@@ -1,0 +1,115 @@
+****To create a project 
+   npx create-expo-app@latest
+   
+****Core components
+   <Image>,<Text>,<View>,<TextInput> and <image/> are self closing tag 
+ 
+****import statement
+import React from 'react';
+import {View, Text, Image, ScrollView, TextInput} from 'react-native';
+
+****Component
+const Cat = () => {
+  return <Text>Hello, I am your cat!</Text>;
+};
+
+****compoet start as fuction
+const Cat = () => {};
+
+****export statement 
+export default Cat;
+
+****variable iside function 
+const Cat = () => {
+const name = 'Maru';
+return <Text>Hello, I am {name}!</Text>;
+};
+
+****To style the Textinput
+<TextInput
+        style={{
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1,
+        }}
+        defaultValue="Name me!"
+      />
+
+**** For images
+<Image
+          source={{
+            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
+          }}
+          style={{width: 200, height: 200}}
+ />
+ 
+**** Code for navigation
+import * as React from 'react';
+import { Button, View, Text,TextInput } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text> Activate your key</Text>
+    <TextInput
+        style={{
+          width: "100%",
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    marginBottom: 10,
+        }}
+        defaultValue= "Activation Number"
+      />
+      <TextInput
+        style={{
+          width: "100%",
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    marginBottom: 10,
+        }}
+        defaultValue="Activation Key"
+      />
+      <Button
+        title="Next"
+        onPress={() => navigation.navigate('Welcome')}
+      />
+    </View>
+  );
+}
+
+function DetailsScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Welcome to your page</Text>
+      <Button
+        title="Activate Pin"
+      />
+    </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Activate" component={HomeScreen} />
+        <Stack.Screen name="Welcome" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+
+git config --global user.name "Rajasuvi"
+git config --global user.email "rajasuvimuthukumar@gmail.com"
+
