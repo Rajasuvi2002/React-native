@@ -3,6 +3,7 @@
    
 ****Core components
    <Image>,<Text>,<View>,<TextInput> and <image/> are self closing tag 
+ <Image>,<Text>,<View>,<TextInput> and <image/> are self closing tag 
  
 ****import statement
 import React from 'react';
